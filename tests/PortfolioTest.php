@@ -11,7 +11,7 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-
+    /** @test */
     public function should_see_hello(){
         $this->visit('/')
             ->see('hello');

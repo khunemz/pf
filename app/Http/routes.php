@@ -27,5 +27,11 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    Route::post('/signin', [
+        'before' => 'csrf',
+        'uses' => 'AdminController@sigin',
+        'as' => 'signin'
+    ]);
+
 });

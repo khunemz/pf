@@ -14,6 +14,10 @@ class PortfolioTest extends TestCase
     /** @test */
     public function should_see_hello(){
         $this->visit('/')
-            ->see('hello');
+            ->see('hello')
+            ->see('Logo')
+            ->see('Experiences')
+            ->see('Skills')
+            ->see('Contact Us');
     }
 }

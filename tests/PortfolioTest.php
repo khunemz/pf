@@ -20,4 +20,11 @@ class PortfolioTest extends TestCase
             ->see('Skills')
             ->see('Contact Us');
     }
+    /** @test **/
+    public function sign_up_should_complete(){
+        $this->type('m@m.com', 'email')
+            ->type('1234', 'password')
+            ->press('Sign up')
+            ->seePageIs('admin/dashboard');
+    }
 }

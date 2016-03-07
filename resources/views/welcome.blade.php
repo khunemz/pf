@@ -1,4 +1,19 @@
 @extends('layout.master')
 @section('content')
-    <p>hello , Logo, Experiences, Skills, Contact Us</p>
+    <!-- Hero Unit -->
+    <div>
+
+    </div>
+    <!-- Our works -->
+    <div>
+
+    </div>
+    <!-- Skills -->
+    <div>
+
+    </div>
+    <!-- Location -->
+    <div>
+
+    </div>
 @endsection

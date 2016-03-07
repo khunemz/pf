@@ -20,12 +20,13 @@
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-<div class="container"
+@include('elements.nav')
+<div class="container">
 
      @yield('content')
 
 </div> <!-- /container -->
+@include('elements.footer')
 
     {!! Html::script('js/jquery-1.11.2.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}

@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {!! Html::style('css/bootstrap.min.css') !!}
+
     {!! Html::style('css/bootstrap-theme.min.css') !!}
     {!! Html::style('css/main.css') !!}
 

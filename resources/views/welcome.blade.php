@@ -1,19 +1,9 @@
 @extends('layout.master')
 @section('content')
-    <!-- Hero Unit -->
-    <div>
-
-    </div>
+    @include('elements.hero')
     <!-- Our works -->
-    <div>
-
-    </div>
+    @include('elements.portfolio')
     <!-- Skills -->
-    <div>
+    @include('elements.skills')
 
-    </div>
-    <!-- Location -->
-    <div>
-
-    </div>
 @endsection

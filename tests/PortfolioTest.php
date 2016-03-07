@@ -10,13 +10,13 @@ class PortfolioTest extends TestCase
      * A basic test example.
      *
      * @return void
-     */
-    /** @test */
-    public function should_see_hello(){
+     *
+    /** @test **/
+    public function should_see_content(){
         $this->visit('/')
-            ->see('hello')
             ->see('Logo')
             ->see('Experiences')
+            ->see('Portfolio')
             ->see('Skills')
             ->see('Contact Us');
     }

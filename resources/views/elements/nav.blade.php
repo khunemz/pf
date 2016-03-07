@@ -13,6 +13,34 @@
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
+            {{--{!! Form::model('user', [--}}
+                    {{--'method' => 'post',--}}
+                    {{--'route' => ['admin.signin'],--}}
+                    {{--'class' => 'navbar-form navbar-right'--}}
+                {{--]) !!}--}}
+            {{--{!! Form::text('email',[--}}
+                    {{--'placeholder' => 'Email',--}}
+                    {{--'class' => 'form-control'--}}
+            {{--]) !!}--}}
+            {{--{!! Form::password('password', [--}}
+                    {{--'placeholder' => 'Password',--}}
+                    {{--'class' => 'form-control'--}}
+            {{--]) !!}--}}
+            {{--{!! Form::submit('Sign in' ,[ 'class' => 'btn btn-success']) !!}--}}
+            {{--{!! Form::token() !!}--}}
+            {{--{!! Form::close() }--}}
+
+
+            <form class="navbar-form navbar-right" role="form">
+                <div class="form-group">
+                    <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+
         </div><!-- End : navbar-collapse -->
 
     </div>

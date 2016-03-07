@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function __construct(){
-        $this->middleware('AdminMiddleware');
-    }
 
     public function signin(Request $request){
         $this->validate($request, [

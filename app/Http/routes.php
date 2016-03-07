@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/signin',[
+
+    'uses' => 'AdminController@signin',
+    'as' => 'signin',
+    'middleware' => 'Admin'
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,11 +34,5 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-
-    Route::post('/signin', [
-        'before' => 'csrf',
-        'uses' => 'AdminController@sigin',
-        'as' => 'signin'
-    ]);
 
 });

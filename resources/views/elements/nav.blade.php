@@ -32,7 +32,7 @@
             {{--{!! Form::close() }--}}
 
 
-            <form class="navbar-form navbar-right"
+            <form name="user" class="navbar-form navbar-right"
                   role="form" action="{{ route('signin') }}" method="post">
                 <div class="form-group">
                     <input name="email" type="text" placeholder="Email" class="form-control">
@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <input name="password" type="password" placeholder="Password" class="form-control">
                 </div>
-                {!! Form::token() !!}
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <button type="submit" class="btn btn-success">Sign in</button>
             </form>
 

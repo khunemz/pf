@@ -11,8 +11,9 @@ class PortfolioTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
-    {
-        $this->assertTrue(true);
+
+    public function should_see_hello(){
+        $this->visit('/')
+            ->see('hello');
     }
 }

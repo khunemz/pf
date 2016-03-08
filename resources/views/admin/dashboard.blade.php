@@ -27,4 +27,6 @@
     </form>
     @include('elements.flash')
     @endif
+
+    {{--Todo : Add WYSIWYG below --}}
 @endsection

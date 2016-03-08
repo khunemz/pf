@@ -11,6 +11,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Experiences</a></li>
                 <li><a href="#">Portfolio</a></li>
+                <li><a href="{{ route('blog.index') }}">Blog Post</a></li>
                 <li><a href="#">Contact Us</a></li>
                 @if(Auth::user())
                 <li><a href="{{ route('page.getauth') }}">Go to dashboard</a></li>

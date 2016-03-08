@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'page.index'
     ]);
 
-    Route::get('/getauth',[
+    Route::get('getauth',[
         'uses' => 'PageController@getauth',
         'as' => 'page.getauth'
     ]);
@@ -54,4 +54,11 @@ Route::group(['middleware' => ['web']], function () {
        'uses' => 'AdminController@signout',
         'as' => 'admin.signout'
     ]);
+
+    //Blogpost
+    Route::get('blog',[
+        'uses' => 'BlogController@index',
+        'as' => 'blog.index'
+    ]);
+
 });

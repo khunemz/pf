@@ -29,4 +29,15 @@ class PortfolioTest extends TestCase
             ->press('Sign in')
             ->seePageIs('http://localhost:8000');
     }
+
+    /** @test **/
+    public function should_see_blogpost(){
+        $this->visit(route('blog.index'))
+            ->see('Title')
+            ->see('Body')
+            ->see('Tag')
+            ->see('Submit')
+            ->press('Submit')
+            ->seePageIs(route('admin.dashboard'));
+    }
 }

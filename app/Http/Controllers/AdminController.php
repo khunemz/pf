@@ -12,8 +12,8 @@ class AdminController extends Controller
 
     public function signup(Request $request){
         $this->validate($request, [
-            'email' => 'required:unique',
-            'password' => 'required:min:6'
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
         ]);
 
         $user = new User();
@@ -21,29 +21,34 @@ class AdminController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        Auth::login($user);
-
-        return redirect()->route('page.index');
+        if(Auth::login($user)):
+            return redirect()->route('page.index')
+                ->with(['message' => 'สมัครสมาชิกเรียบร้อย']);
+        endif;
+        return redirect()->route('page.getauth')->with(['message' => 'ไม่สามารถสมัครสมาชิกได้ กรุณาลองใหม่อีกครั้ง']);
     }
 
     public function signin(Request $request){
         $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required|email',
+            'password' => 'required|min:6'
         ]);
 
         if(Auth::attempt([
             'email' => $request->email,
             'password' => $request->password
         ])){
-            return redirect()->route('page.index');
+            return redirect()->route('page.index')->with(['message' => 'ยินดีต้อนรับครับ']);
         }
 
-        return redirect()->route('page.getauth');
+        return redirect()->route('page.getauth')->with(['message' => 'Invalid Email or Password, please try again.' ]);
     }
 
     public function signout(){
-        Auth::logout();
-        return redirect()->route('page.index');
+
+        if(Auth::logout()):
+            return redirect()->route('page.index')->with(['message' => 'ท่านได้ออกจากระบบแล้ว']);
+        endif;
+        return redirect()->route('page.getauth')->with(['message'=> 'มีบางอย่างผิดพลาด กรุณาลองอีกครั้ง']);
     }
 }

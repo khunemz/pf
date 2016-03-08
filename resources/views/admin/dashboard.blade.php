@@ -9,6 +9,7 @@
         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
         <button type="submit" class="btn btn-success">Sign in</button>
     </form>
+    @include('elements.flash')
     @endif
     @if(Auth::user())
     <hr />
@@ -20,10 +21,10 @@
         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
         <button type="submit" class="btn btn-success">Sign up</button>
     </form>
-    <hr />
     <form name="form__signout" class="form-group"
           action="{{ route('admin.signout') }}" method="get">
         <button class="btn btn-danger">Sign out</button>
     </form>
+    @include('elements.flash')
     @endif
 @endsection

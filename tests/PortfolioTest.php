@@ -21,7 +21,8 @@ class PortfolioTest extends TestCase
             ->see('Contact Us');
     }
     /** @test **/
-    public function sign_up_should_complete(){
+    public function sign_in_should_ok_and_go_to_index()
+    {
         $this->visit('http://localhost:8000/getauth')
             ->type('this@is.com', 'email')
             ->type('123456', 'password')

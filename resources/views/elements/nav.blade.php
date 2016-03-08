@@ -12,6 +12,9 @@
                 <li><a href="#">Experiences</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact Us</a></li>
+                @if(Auth::user())
+                <li><a href="{{ route('page.getauth') }}">Go to dashboard</a></li>
+                @endif
             </ul>
         </div><!-- End : navbar-collapse -->
 

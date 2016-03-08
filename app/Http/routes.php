@@ -61,7 +61,7 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'blog.index'
     ]);
 
-    Route::get('blog/create',[
+    Route::get('create',[
         'uses' => 'BlogController@create',
         'as' => 'blog.create'
     ]);
@@ -69,6 +69,26 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('store', [
         'uses' => 'BlogController@storeblog',
         'as' => 'blog.storeblog'
+    ]);
+
+    Route::get('show/{id}',[
+        'uses' => 'BlogController@show',
+        'as' => 'blog.show'
+    ]);
+
+    Route::get('edit/{id}', [
+        'uses' => 'BlogController@edit',
+        'as' => 'blog.edit'
+    ]);
+
+    Route::put('blog', [
+        'uses' => 'BlogController@update',
+        'as' => 'blog.update'
+    ]);
+
+    Route::post('delete/{id}',[
+        'uses' => 'BlogController@delete',
+        'as' => 'blog.delete'
     ]);
 
 });

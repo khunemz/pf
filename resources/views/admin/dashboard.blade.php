@@ -25,10 +25,9 @@
           action="{{ route('admin.signout') }}" method="get">
         <button class="btn btn-danger">Sign out</button>
     </form>
+    <h4><a href="{{ route('blog.create') }}">Create New Blog</a></h4>
     @include('elements.flash')
     @endif
     <hr />
-    <h4><a href="{{ route('blog.create') }}">Create New Blog</a></h4>
-    @include('blog.index')
 
 @endsection

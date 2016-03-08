@@ -46,9 +46,7 @@ class AdminController extends Controller
 
     public function signout(){
 
-        if(Auth::logout()):
-            return redirect()->route('page.index')->with(['message' => 'ท่านได้ออกจากระบบแล้ว']);
-        endif;
-        return redirect()->route('page.getauth')->with(['message'=> 'มีบางอย่างผิดพลาด กรุณาลองอีกครั้ง']);
+        Auth::logout();
+        return redirect()->route('page.getauth')->with(['message'=> 'ออกจากระบบแล้ว']);
     }
 }

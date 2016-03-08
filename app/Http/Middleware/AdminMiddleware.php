@@ -16,9 +16,9 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()){
+        if(Auth::check() && Auth::user()){
             return $next($request);
         }
-        return redirect()->back()->with('flash', 'You cannot access!!');
+        return redirect()->back();
     }
 }

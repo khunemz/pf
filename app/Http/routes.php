@@ -11,16 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::post('/signin',[
 
-    'uses' => 'AdminController@signin',
-    'as' => 'signin',
-    'middleware' => 'Admin'
-]);
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +27,31 @@ Route::post('/signin',[
 
 Route::group(['middleware' => ['web']], function () {
 
+    //Page Controller
+    Route::get('/', [
+        'uses' => 'PageController@index',
+        'as' => 'page.index'
+    ]);
+
+    Route::get('/getauth',[
+        'uses' => 'PageController@getauth',
+        'as' => 'page.getauth'
+    ]);
+
+
+    //AdminController
+    Route::post('signin',[
+        'uses' => 'AdminController@signin',
+        'as' => 'admin.signin'
+    ]);
+
+    Route::post('signup', [
+        'uses' => 'AdminController@signup',
+        'as' => 'admin.signup'
+    ]);
+
+    Route::get('signout', [
+       'uses' => 'AdminController@signout',
+        'as' => 'admin.signout'
+    ]);
 });

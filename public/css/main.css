@@ -45,12 +45,14 @@
 /* ==========================================================================
    Body
    ========================================================================== */
-.body {
+body {
    padding-top: 70px;
    padding-bottom: 30px;
    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
    background-color: #ffffff;
 }
+
+
 
 /* ==========================================================================
    Navigation

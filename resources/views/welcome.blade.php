@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    @include('elements.flash')
+    {{--<Todo : include flash.blade.php--}}
     @include('elements.hero')
     <!-- Our works -->
     @include('elements.portfolio')

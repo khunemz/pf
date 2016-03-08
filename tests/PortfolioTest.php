@@ -22,9 +22,10 @@ class PortfolioTest extends TestCase
     }
     /** @test **/
     public function sign_up_should_complete(){
-        $this->type('m@m.com', 'email')
-            ->type('1234', 'password')
-            ->press('Sign up')
-            ->seePageIs('admin/dashboard');
+        $this->visit('http://localhost:8000/getauth')
+            ->type('this@is.com', 'email')
+            ->type('123456', 'password')
+            ->press('Sign in')
+            ->seePageIs('http://localhost:8000');
     }
 }

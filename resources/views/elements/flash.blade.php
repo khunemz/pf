@@ -1,4 +1,4 @@
-@if(Session::get('flash'))
+@if(Session::has('flash'))
     <center>
         <div class="alert-danger">
             <p>{{ Session::get('flash') }}</p>

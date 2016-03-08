@@ -27,6 +27,8 @@
     </form>
     @include('elements.flash')
     @endif
+    <hr />
+    <h4><a href="{{ route('blog.create') }}">Create New Blog</a></h4>
+    @include('blog.index')
 
-    {{--Todo : Add WYSIWYG below --}}
 @endsection

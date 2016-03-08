@@ -61,4 +61,14 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'blog.index'
     ]);
 
+    Route::get('blog/create',[
+        'uses' => 'BlogController@create',
+        'as' => 'blog.create'
+    ]);
+
+    Route::post('store', [
+        'uses' => 'BlogController@storeblog',
+        'as' => 'blog.storeblog'
+    ]);
+
 });
